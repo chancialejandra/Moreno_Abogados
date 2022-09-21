@@ -1,0 +1,197 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 04-dic-2020, 18:19:59
+    Author     : lenovo
+*/
+body{
+    font-family: verdana, serif;
+    color: black;
+    background-color: #e8e8e8;
+}
+
+body a{
+    color: black;
+    text-decoration: none;
+}
+
+.somos{
+    background: url(\IMG/aprende.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    color: black;
+}
+
+.somos ::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background:white;
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.title{
+    padding-top: 9%;
+    padding-left: 10%;
+    padding-right: 10%
+}
+
+p.title{
+    padding-top: 5%;
+    padding-bottom: 6%;
+    height: auto;
+    word-wrap: break-word;
+    font-size: 25px
+}
+
+.imagen{
+    overflow: hidden;
+}
+
+.imagen img{
+    transition: all 1.5s;
+}
+
+.imagen:hover img{
+    filter: blur(2px);
+    transform: scale(1.5);
+    transition: all 1.5s;
+
+}
+
+.imagen::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 1.5s;
+}
+
+.imagen:hover::before{
+    background: rgba(255, 255, 255 ,0.3);
+    z-index: 10;
+    transition: all 1.5s;
+}
+
+.TxTservicio{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TituloS{
+    font-size: 2.8vw;
+    opacity: 0;
+}
+
+.imagen:hover .TituloS{
+    opacity: 1;
+    animation-delay: 3s;
+    transition: all 2s;
+}
+
+.imagen::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 5px;
+    background: black;
+    left: 50%;
+    top: 40%;
+    z-index: 10;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+}
+
+.imagen:hover::after{
+    opacity: 1;
+    animation-delay: 3s;
+    transition: all 2s;
+}
+
+.TituloS::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 5px;
+    background: black;
+    left: 50%;
+    top: 60%;
+    z-index: 10;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.confiabilidad{
+    background: url(IMG/agree.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    position: relative;
+    color: black;
+    z-index: 1;
+    bottom: 0;
+}
+
+.confiabilidad ::before{
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background:white;
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+    padding-left: 100%
+}
+
+.titleC{
+    padding-top: 9%;
+    padding-left: 10%;
+    padding-right: 10%
+}
+
+p.titleC{
+    padding-top: 5%;
+    padding-bottom: 4%;
+    word-wrap: break-word;
+    font-size: 25px
+}
+
+.sesion{
+    margin-top: 3%;
+}
+
+.sesion button{
+    width: 80%;
+    padding: 2%;
+}
+
+.formsesion{
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 4%;
+}

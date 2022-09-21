@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 05-dic-2020, 19:41:58
+    Author     : lenovo
+*/
+
+.user-img {
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.modal-content {
+    background-color: #dedede;
+    opacity: .90;
+    padding: 0 1px;
+    box-shadow: 0px 0px 3px #636363;
+}
+
+.user-img img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 3px #636363;
+    border-radius: 50%;
+}
+
+.main-section {
+    margin: 0 auto;
+    margin-top: 1%;
+    padding: 0;
+}
+
+
+
+.form-group input {
+    height: 42px;
+    font-size: 18px;
+    border: 0;
+    padding-left: 54px;
+    border-radius: 7px;
+}
+
+.form-group::before {
+    font-family: "verdana\ serif";
+}
+
+.form-group#user-group::before {
+    content: "\f007";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top: 4px;
+}
+
+.form-group#pass-group::before {
+    content: "\f023";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top: 4px;
+}
+
+button {
+    width: 60%;
+    margin: 5px 0 20px;
+}
+
+.forgot a {
+    color: #1b1b1b;
+}
