@@ -106,21 +106,23 @@ $id_AbogadoSystem = $_GET["abogado"];
               if (empty($abogado["ID_ABOGADO"])) {
                 foreach ($abogadoA as $key => $value):
               ?>
-                <a class=" col-2 nav-item rounded border border-dark ml-1 mr-1 mt-2" href="index.php?page=Acciones_Abogados&id=<?php echo $value["ID_ABOGADO"]; ?>&abogado=<?php echo $id_AbogadoSystem; ?> " style="text-transform: none; color: black">
-                    <img class="mt-2" src="IMG/lawyerAvatr.png" width="90%">
+                <a class=" col-2 nav-item rounded border border-dark ml-1 mr-1 mt-1" href="index.php?page=Acciones_Abogados&id=<?php echo $value["ID_ABOGADO"]; ?>&abogado=<?php echo $id_AbogadoSystem; ?> " style="text-transform: none; color: black">
+                    <img class="mt-4" src="IMG/lawyerAvatr.png" width="50%">
                     <p class="mt-2">
                       <?php
                       echo $value["NOMBRE"];
+                      echo $value["APELLIDO"];
                        ?>
                     </p>
                 </a>
               <?php endforeach;
             }else{ ?>
-              <a class=" col-2 nav-item rounded border border-dark ml-1 mr-1 mt-2" href="index.php?page=Acciones_Abogados&id=<?php echo $abogado["ID_ABOGADO"]; ?>&abogado=<?php echo $id_AbogadoSystem; ?> " style="text-transform: none; color: black">
-                  <img class="mt-2" src="IMG/lawyerAvatr.png" width="90%">
+              <a class=" col-2 nav-item rounded border border-dark ml-1 mr-1 mt-1" href="index.php?page=Acciones_Abogados&id=<?php echo $abogado["ID_ABOGADO"]; ?>&abogado=<?php echo $id_AbogadoSystem; ?> " style="text-transform: none; color: black">
+                  <img class="mt-4" src="IMG/lawyerAvatr.png" width="50%">
                   <p class="mt-2">
                     <?php
                     echo $abogado["NOMBRE"];
+                    echo $value["APELLIDO"];
                      ?>
                   </p>
               </a>
