@@ -197,7 +197,7 @@ $id_AbogadoSystem = $_GET["abogado"];
               $ciudad = $_POST["Ciudad"];
               $juzgado = $_POST["Juzgado"];
               $NContraparte = $_POST["NAbogadoContraparte"];
-              $patron_texto = "/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ\s]+$/";
+              $patron_texto = "/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙÑñ\s]+$/";
               $TPersona = $_POST["TPersona"];
               $TDocumento = $_POST["TDocumento"];
               $NDocumento = $_POST["NDocumento"];
@@ -265,7 +265,6 @@ $id_AbogadoSystem = $_GET["abogado"];
               if ($ciudad == "Seleccione...") {
                 array_push($campos, "Por favor seleccione una Ciudad");
               }
-
               if ($NContraparte == "Seleccione...") {
                 array_push($campos, "Por favor seleccione una opción valida para la Contraparte");
               }
@@ -363,7 +362,7 @@ $id_AbogadoSystem = $_GET["abogado"];
 
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label for="TipoCaso">Tipo de Caso</label>
+        <label for="TipoCaso">Tipo de Caso<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" name="TipoCaso">
           <option selected >Seleccione...</option>
           <?php foreach ($tipo_litigio as $key => $value): ?>
@@ -383,7 +382,7 @@ $id_AbogadoSystem = $_GET["abogado"];
 
     <div class="form-row mt-2">
       <div class="col-md-6 mb-3">
-        <label for="NAbogado">Abogado</label>
+        <label for="NAbogado">Abogado<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" id="NAbogado" name="NAbogado">
           <option selected>Seleccione...</option>
           <?php foreach ($abogadoA as $key => $value): ?>
@@ -392,7 +391,7 @@ $id_AbogadoSystem = $_GET["abogado"];
         </select>
       </div>
       <div class="col-md-6 mb-3">
-        <label for="Ciudad">Ciudad</label>
+        <label for="Ciudad">Ciudad<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" name="Ciudad">
           <option selected >Seleccione...</option>
           <?php foreach ($Select_Ciudad as $key => $value): ?>
@@ -404,7 +403,7 @@ $id_AbogadoSystem = $_GET["abogado"];
 
     <div class="form-row text-center justify-content-center mt-2">
       <div class="col-md-12 mb-3">
-        <label for="Juzgado">Juzgado</label>
+        <label for="Juzgado">Juzgado<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" name="Juzgado">
           <option selected >Seleccione...</option>
           <?php foreach ($Select_Juzgado as $key => $value): ?>
@@ -414,34 +413,16 @@ $id_AbogadoSystem = $_GET["abogado"];
       </div>
     </div>
 
-    <br>
-    <hr>
-    <p class="text-center"><strong>Abogado Contraparte</strong></p>
-    <hr>
-    <br>
-
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="NAbogadoContraparte">Nombre</label>
-        <select class="custom-select" name="NAbogadoContraparte">
-        <option selected >Seleccione...</option>
-        <?php foreach ($Select_Contraparte as $key => $value): ?>
-          <option value="<?php echo $value["ID_CONTRAPARTE"]; ?>"> <?php echo $value["NOMBRE"] ?> </option>
-        <?php endforeach; ?>
-      </select>
-      </div>
-
-    </div>
 
     <br>
     <hr>
-    <p class="text-center"><strong>Datos Persona</strong></p>
+    <p class="text-center"><strong>Datos del cliente</strong></p>
     <hr>
     <br>
 
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label for="TPersona">Tipo de Persona</label>
+        <label for="TPersona">Tipo de Persona<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" id="TPersona" name="TPersona" value="<?php if (isset($TipoLitigio)) {echo $TPersona;} ?>">
           <option selected>Seleccione...</option>
           <option value="1">Natural</option>
@@ -449,7 +430,7 @@ $id_AbogadoSystem = $_GET["abogado"];
         </select>
       </div>
       <div class="col-md-6 mb-3">
-        <label for="TDocumento">Tipo de Documento</label>
+        <label for="TDocumento">Tipo de Documento<a style="color:#FF0000;">*</a></label>
         <select class="custom-select" id="TDocumento" name="TDocumento" value="<?php if (isset($TipoLitigio)) {echo   $TDocumento;} ?>">
           <option selected>Seleccione...</option>
           <option value="1">Cedula de Ciudadania</option>
@@ -461,46 +442,64 @@ $id_AbogadoSystem = $_GET["abogado"];
 
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label for="NDocumento">Número Documento</label>
+        <label for="NDocumento">Número Documento<a style="color:#FF0000;">*</a></label>
         <input type="text" class="form-control valid" id="NDocumento" name="NDocumento" placeholder="Número de Documento" value="<?php if (isset($TipoLitigio)) {echo $NDocumento;} ?>">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="NombreC">Nombre</label>
+        <label for="NombreC">Nombre<a style="color:#FF0000;">*</a></label>
         <input type="text" class="form-control valid" id="NombreC" name="NombreC" placeholder="Nombre" value="<?php if (isset($TipoLitigio)) {echo $Nombre;} ?>">
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label for="ApellidoC">Apellido</label>
+        <label for="ApellidoC">Apellido<a style="color:#FF0000;">*</a></label>
         <input type="text" class="form-control valid" id="ApellidoC" name="ApellidoC" placeholder="Apellidos" value="<?php if (isset($TipoLitigio)) {echo $Apellido;} ?>">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="TelefonoC">Telefono</label>
+        <label for="TelefonoC">Telefono<a style="color:#FF0000;">*</a></label>
         <input type="tel" class="form-control" id="TelefonoC" name="TelefonoC" placeholder="Telefono" value="<?php if (isset($TipoLitigio)) {echo $Telefono;} ?>">
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label for="CelularC">Celular</label>
+        <label for="CelularC">Celular<a style="color:#FF0000;">*</a></label>
         <input type="tel" class="form-control valid" id="CelularC" name="CelularC" placeholder="Celular" value="<?php if (isset($TipoLitigio)) {echo $Celular;} ?>">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="CorreoC">Correo</label>
+        <label for="CorreoC">Correo<a style="color:#FF0000;">*</a></label>
         <input type="email" class="form-control valid" id="CorreoC" name="CorreoC" placeholder="Correo" value="<?php if (isset($TipoLitigio)) {echo $Correo;} ?>">
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-md-6  mb-3">
-        <label for="DireccionC">Dirección</label>
+        <label for="DireccionC">Dirección<a style="color:#FF0000;">*</a></label>
         <input type="text" class="form-control valid" id="DireccionC" name="DireccionC" placeholder="Dirección Residencia" value="<?php if (isset($TipoLitigio)) {echo $Direccion;} ?>">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="FNacimiento">Fecha de Nacimiento</label>
+        <label for="FNacimiento">Fecha de Nacimiento<a style="color:#FF0000;">*</a></label>
         <input type="date" class="form-control valid" id="FNacimiento" name="FNacimiento" placeholder="Fecha de Nacimiento" value="<?php if (isset($TipoLitigio)) {echo $FNacimiento;} ?>">
       </div>
+    </div>
+
+    <br>
+    <hr>
+    <p class="text-center"><strong>Abogado Contraparte</strong></p>
+    <br>
+
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="NAbogadoContraparte">Nombre<a style="color:#FF0000;">*</a></label>
+        <select class="custom-select" name="NAbogadoContraparte">
+        <option selected >Seleccione...</option>
+        <?php foreach ($Select_Contraparte as $key => $value): ?>
+          <option value="<?php echo $value["ID_CONTRAPARTE"]; ?>"> <?php echo $value["NOMBRE"] ?> </option>
+        <?php endforeach; ?>
+      </select>
+      </div>
+
     </div>
 
     <hr>
@@ -526,11 +525,11 @@ $id_AbogadoSystem = $_GET["abogado"];
 
                <div class="form-row">
                  <div class="col-md-6 mb-3">
-                   <label for="Ciudad">Nombre</label>
+                   <label for="Ciudad">Nombre<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Nombre" name="Nombre" placeholder="Nombre">
                  </div>
                  <div class="col-md-6 mb-3">
-                   <label for="Juzgado">Direccion</label>
+                   <label for="Juzgado">Direccion<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Direccion" name="Direccion" placeholder="Direccion">
                  </div>
                </div>
@@ -562,22 +561,22 @@ $id_AbogadoSystem = $_GET["abogado"];
 
                <div class="form-row">
                  <div class="col-md-6 mb-3">
-                   <label for="Ciudad">Nombre</label>
+                   <label for="Ciudad">Nombre<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Nombre" name="Nombre" placeholder="Nombre">
                  </div>
                  <div class="col-md-6 mb-3">
-                   <label for="Juzgado">Telefono</label>
+                   <label for="Juzgado">Telefono<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Telefono" name="Telefono" placeholder="Telefono">
                  </div>
                </div>
 
                <div class="form-row">
                  <div class="col-md-6 mb-3">
-                   <label for="Ciudad">Direccion</label>
+                   <label for="Ciudad">Direccion<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Direccion" name="Direccion" placeholder="Direccion">
                  </div>
                  <div class="col-md-6 mb-3">
-                   <label for="Juzgado">Correo</label>
+                   <label for="Juzgado">Correo<a style="color:#FF0000;">*</a></label>
                    <input type="text" class="form-control valid" id="Correo" name="Correo" placeholder="Correo">
                  </div>
                </div>

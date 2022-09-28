@@ -7,7 +7,7 @@ class CRUDContraparteoMd{
 
   static public function selecionarContraparteMd($tabla, $item, $valor){
     if ($item == null && $valor == null) {
-      $stmt = ConexionBD::conectar()->prepare("SELECT * FROM $tabla");
+      $stmt = ConexionBD::conectar()->prepare("SELECT * FROM $tabla ");
       $stmt -> execute();
       return $stmt -> fetchAll();
 

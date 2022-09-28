@@ -103,6 +103,17 @@ class CRUDLitigioMd{
     $stmt->bindParam(":FK_JUZGADO", $datos["FK_JUZGADO"], PDO::PARAM_INT);
     $stmt->bindParam(":FK_CIUDAD", $datos["FK_CIUDAD"], PDO::PARAM_INT);
     $stmt->bindParam(":FK_ABOGADO", $datos["FK_ABOGADO"], PDO::PARAM_INT);
+    /**
+     * Condicional por si no existe contraparte
+     * Se le asigna automaticamente al abogado contraparte codigo 2 (NA)
+     
+    *if(empty($datos["FK_CONTRAPARTE"])){ 
+    *  $stmt->bindParam(":FK_CONTRAPARTE", 2, PDO::PARAM_STR);
+    *} else{
+    *  $stmt->bindParam(":FK_CONTRAPARTE", $datos["FK_CONTRAPARTE"], PDO::PARAM_STR);
+    *}    
+    
+    * **/
     $stmt->bindParam(":FK_CONTRAPARTE", $datos["FK_CONTRAPARTE"], PDO::PARAM_STR);
     $stmt->bindParam(":FK_CLIENTE", $datos["FK_CLIENTE"], PDO::PARAM_INT);
     $stmt->bindParam(":FK_T_LITIGIO", $datos["FK_T_LITIGIO"], PDO::PARAM_INT);
